@@ -12,7 +12,7 @@ namespace Swoft\Console\Helper;
 use Swoft\Stdlib\Helper\Arr;
 use Swoft\Stdlib\Helper\Str;
 use Swoft\Stdlib\Helper\Sys;
-use Toolkit\Cli\ColorTag;
+use Toolkit\Cli\Color\ColorTag;
 use function array_keys;
 use function array_merge;
 use function count;

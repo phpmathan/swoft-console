@@ -12,7 +12,7 @@ namespace Swoft\Console\Advanced\Formatter;
 use Swoft\Console\Advanced\MessageFormatter;
 use Swoft\Console\Console;
 use Swoft\Console\Helper\FormatUtil;
-use Toolkit\Cli\ColorTag;
+use Toolkit\Cli\Color\ColorTag;
 use function array_merge;
 use function trim;
 use function ucwords;

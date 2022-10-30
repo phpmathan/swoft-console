@@ -15,7 +15,7 @@ use Swoft\Annotation\Exception\AnnotationException;
 use Swoft\Console\Annotation\Mapping\CommandOption;
 use Swoft\Console\CommandRegister;
 use Swoft\Console\FlagType;
-use Toolkit\Cli\Flags;
+use Toolkit\Cli\Helper\FlagHelper;
 
 /**
  * Class CommandOptionParser
@@ -48,7 +48,7 @@ class CommandOptionParser extends Parser
         $valType = $option->getType();
 
         // if ($valType === 'BOOL') {
-        //     $defVal = Flags::filterBool($defVal);
+        //     $defVal = FlagHelper::filterBool($defVal);
         // }
 
         // Add route info for group command action
@@ -59,7 +59,7 @@ class CommandOptionParser extends Parser
             'desc'    => $option->getDesc(),
             'mode'    => $option->getMode(),
             'type'    => $valType,
-            'default' => $valType === FlagType::BOOL ? Flags::filterBool($defVal) : $defVal,
+            'default' => $valType === FlagType::BOOL ? FlagHelper::filterBool($defVal) : $defVal,
         ]);
 
         return [];

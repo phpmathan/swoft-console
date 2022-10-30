@@ -13,7 +13,7 @@ use Swoft\Console\Advanced\MessageFormatter;
 use Swoft\Console\Helper\Show;
 use Swoft\Stdlib\Helper\Str;
 use Swoft\Stdlib\StrBuffer;
-use Toolkit\Cli\ColorTag;
+use Toolkit\Cli\Color\ColorTag;
 use function array_keys;
 use function array_merge;
 use function array_sum;

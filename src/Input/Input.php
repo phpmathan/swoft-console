@@ -13,7 +13,7 @@ use Swoft\Bean\Annotation\Mapping\Bean;
 use Swoft\Console\Annotation\Mapping\Command;
 use Swoft\Console\Exception\CommandFlagException;
 use Swoft\Console\FlagType;
-use Toolkit\Cli\Flags;
+use Toolkit\Cli\Helper\FlagHelper;
 use function array_map;
 use function array_shift;
 use function basename;
@@ -70,7 +70,7 @@ class Input extends AbstractInput
 
         if ($parsing) {
             // list($this->args, $this->sOpts, $this->lOpts) = InputParser::fromArgv($args);
-            [$this->args, $this->sOpts, $this->lOpts] = Flags::parseArgv($this->flags);
+            [$this->args, $this->sOpts, $this->lOpts] = FlagHelper::parseArgv($this->flags);
         }
     }
 
@@ -81,11 +81,11 @@ class Input extends AbstractInput
     {
         $tokens = array_map(function ($token) {
             if (preg_match('{^(-[^=]+=)(.+)}', $token, $match)) {
-                return $match[1] . Flags::escapeToken($match[2]);
+                return $match[1] . FlagHelper::escapeToken($match[2]);
             }
 
             if ($token && $token[0] !== '-') {
-                return Flags::escapeToken($token);
+                return FlagHelper::escapeToken($token);
             }
 
             return $token;
@@ -140,7 +140,7 @@ class Input extends AbstractInput
 
         // re-parsing
         if ($this->flags) {
-            [$this->args, $this->sOpts, $this->lOpts] = Flags::parseArgv($this->flags, $config);
+            [$this->args, $this->sOpts, $this->lOpts] = FlagHelper::parseArgv($this->flags, $config);
 
             // Binding
             if ($binding) {

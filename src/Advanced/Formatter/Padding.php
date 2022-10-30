@@ -13,7 +13,7 @@ use Swoft\Console\Advanced\MessageFormatter;
 use Swoft\Console\Console;
 use Swoft\Stdlib\Helper\Arr;
 use Swoft\Stdlib\Helper\Str;
-use Toolkit\Cli\ColorTag;
+use Toolkit\Cli\Color\ColorTag;
 use function array_merge;
 use function trim;
 use function ucfirst;

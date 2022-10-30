@@ -15,7 +15,7 @@ use Swoft\Annotation\Exception\AnnotationException;
 use Swoft\Console\Annotation\Mapping\CommandArgument;
 use Swoft\Console\CommandRegister;
 use Swoft\Console\FlagType;
-use Toolkit\Cli\Flags;
+use Toolkit\Cli\Helper\FlagHelper;
 
 /**
  * Class CommandArgumentParser
@@ -53,7 +53,7 @@ class CommandArgumentParser extends Parser
             'desc'    => $annotation->getDesc(),
             'mode'    => $annotation->getMode(),
             'type'    => $valType,
-            'default' => $valType === FlagType::BOOL ? Flags::filterBool($defVal) : $defVal,
+            'default' => $valType === FlagType::BOOL ? FlagHelper::filterBool($defVal) : $defVal,
         ]);
 
         return [];

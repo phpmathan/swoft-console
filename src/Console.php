@@ -10,7 +10,7 @@
 namespace Swoft\Console;
 
 use Swoft\Console\Style\Style;
-use Toolkit\Cli\ColorTag;
+use Toolkit\Cli\Color\ColorTag;
 use function array_merge;
 use function date;
 use function fflush;
